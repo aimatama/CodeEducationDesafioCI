@@ -14,5 +14,5 @@ steps:
     
   - id: "Instalação do App somaNumeros"
     name: 'gcr.io/cloud-builders/go'
-    args: ['install', 'somaNumeros']
+    args: ['install', 'soma']
     env: ['GOPATH=.']
