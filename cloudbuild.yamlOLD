@@ -1,0 +1,22 @@
+steps:
+  - id: "Instalação do App somaNumeros"
+    name: 'gcr.io/cloud-builders/go'
+    args: ['install', 'somaNumeros']
+    env: ['GOPATH=.']
+
+  - id: "Execução do AppTest somaNumeros"
+    name: 'gcr.io/cloud-builders/go'
+    args: ['test', '-v','./...']
+    env: ['GOPATH=.']  
+
+  - id: "Build da Imagem"
+    name: "gcr.io/cloud-builders/docker"
+    args: ["build", "--tag=gcr.io/$PROJECT_ID/somaNumeros:$SHORT_SHA", "."]
+
+  - id: "Push da Imagem"
+    name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/$PROJECT_ID/somaNumeros:$SHORT_SHA"]
+
+  - id: "Execução do Container"
+    name: "gcr.io/cloud-builders/docker"
+    args: ["run", "gcr.io/$PROJECT_ID/somaNumeros:$SHORT_SHA"]
