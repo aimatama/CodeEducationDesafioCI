@@ -12,7 +12,7 @@ steps:
     name: "golangci/golangci-lint"
     args: ["golangci-lint","run"]
     
-  - id: "Instalação do App somaNumeros"
+  - id: "Instalação do App SomaNumeros"
     name: 'gcr.io/cloud-builders/go'
     args: ['install', 'soma']
     env: ['GOPATH=.']
