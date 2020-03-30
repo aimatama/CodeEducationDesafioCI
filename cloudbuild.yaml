@@ -17,7 +17,7 @@ steps:
     args: ['install', 'soma']
     env: ['GOPATH=.']
     
-  - id: 'Executando o Teste Unitário do App somaNumeros'
+  - id: 'Executando o Teste Unitário do App SomaNumeros'
     name: 'gcr.io/cloud-builders/go'
     args: ['test', '-v','./...']
     env: ['GOPATH=.']
