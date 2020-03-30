@@ -1,0 +1,78 @@
+starting build "cf242850-2db2-4246-9de4-d073969e23ef"
+
+FETCHSOURCE
+Fetching storage object: gs://252261994241.cloudbuild-source.googleusercontent.com/df12b1309cdf115f2e98d9c1ea55f6e57a154a5f-f691e0eb-e631-4193-9470-77e671a56702.tar.gz#1585574510172533
+Copying gs://252261994241.cloudbuild-source.googleusercontent.com/df12b1309cdf115f2e98d9c1ea55f6e57a154a5f-f691e0eb-e631-4193-9470-77e671a56702.tar.gz#1585574510172533...
+/ [0 files][    0.0 B/  1.2 KiB]                                                
+/ [1 files][  1.2 KiB/  1.2 KiB]                                                
+Operation completed over 1 objects/1.2 KiB.                                      
+BUILD
+Starting Step #0 - "eclint"
+Step #0 - "eclint": Pulling image: e53e225/editorconfig-checker
+Step #0 - "eclint": Using default tag: latest
+Step #0 - "eclint": latest: Pulling from e53e225/editorconfig-checker
+Step #0 - "eclint": 4fe2ade4980c: Pulling fs layer
+Step #0 - "eclint": 136604f124e7: Pulling fs layer
+Step #0 - "eclint": 13f341eda658: Pulling fs layer
+Step #0 - "eclint": 120bb0ab01db: Pulling fs layer
+Step #0 - "eclint": 120bb0ab01db: Waiting
+Step #0 - "eclint": 13f341eda658: Verifying Checksum
+Step #0 - "eclint": 13f341eda658: Download complete
+Step #0 - "eclint": 4fe2ade4980c: Verifying Checksum
+Step #0 - "eclint": 4fe2ade4980c: Download complete
+Step #0 - "eclint": 136604f124e7: Verifying Checksum
+Step #0 - "eclint": 136604f124e7: Download complete
+Step #0 - "eclint": 4fe2ade4980c: Pull complete
+Step #0 - "eclint": 120bb0ab01db: Verifying Checksum
+Step #0 - "eclint": 120bb0ab01db: Download complete
+Step #0 - "eclint": 136604f124e7: Pull complete
+Step #0 - "eclint": 13f341eda658: Pull complete
+Step #0 - "eclint": 120bb0ab01db: Pull complete
+Step #0 - "eclint": Digest: sha256:81e2453d9873295d7cf8afc0d3efee7864a7d4e323ff5dca6a5ef4d1b8dd78ad
+Step #0 - "eclint": Status: Downloaded newer image for e53e225/editorconfig-checker:latest
+Step #0 - "eclint": docker.io/e53e225/editorconfig-checker:latest
+Step #0 - "eclint": sucessfully checked 6 files :)
+Finished Step #0 - "eclint"
+Starting Step #1 - "go_version"
+Step #1 - "go_version": Already have image (with digest): gcr.io/cloud-builders/go
+Step #1 - "go_version": Documentation at https://github.com/GoogleCloudPlatform/cloud-builders/blob/master/go/README.md
+Step #1 - "go_version": Running: go version
+Step #1 - "go_version": go version go1.14 linux/amd64
+Finished Step #1 - "go_version"
+Starting Step #2 - "go_linter"
+Step #2 - "go_linter": Pulling image: golangci/golangci-lint
+Step #2 - "go_linter": Using default tag: latest
+Step #2 - "go_linter": latest: Pulling from golangci/golangci-lint
+Step #2 - "go_linter": 50e431f79093: Already exists
+Step #2 - "go_linter": dd8c6d374ea5: Already exists
+Step #2 - "go_linter": c85513200d84: Already exists
+Step #2 - "go_linter": 55769680e827: Already exists
+Step #2 - "go_linter": 15357f5e50c4: Already exists
+Step #2 - "go_linter": 9edb2e455d9d: Already exists
+Step #2 - "go_linter": ed2acfe844ed: Already exists
+Step #2 - "go_linter": d44a93af60a0: Pulling fs layer
+Step #2 - "go_linter": d44a93af60a0: Verifying Checksum
+Step #2 - "go_linter": d44a93af60a0: Download complete
+Step #2 - "go_linter": d44a93af60a0: Pull complete
+Step #2 - "go_linter": Digest: sha256:d2664288f9e244883204a301fd70dc0d49b2fdbc386594359ba62db1be812a1c
+Step #2 - "go_linter": Status: Downloaded newer image for golangci/golangci-lint:latest
+Step #2 - "go_linter": docker.io/golangci/golangci-lint:latest
+Finished Step #2 - "go_linter"
+Starting Step #3 - "Instalação do App SomaNumeros"
+Step #3 - "Instalação do App SomaNumeros": Already have image (with digest): gcr.io/cloud-builders/go
+Step #3 - "Instalação do App SomaNumeros": Documentation at https://github.com/GoogleCloudPlatform/cloud-builders/blob/master/go/README.md
+Step #3 - "Instalação do App SomaNumeros": Binaries built using 'go install' will go to "./bin".
+Step #3 - "Instalação do App SomaNumeros": Running: go install soma
+Finished Step #3 - "Instalação do App SomaNumeros"
+Starting Step #4 - "Executando o Teste Unitário do App SomaNumeros"
+Step #4 - "Executando o Teste Unitário do App SomaNumeros": Already have image (with digest): gcr.io/cloud-builders/go
+Step #4 - "Executando o Teste Unitário do App SomaNumeros": Documentation at https://github.com/GoogleCloudPlatform/cloud-builders/blob/master/go/README.md
+Step #4 - "Executando o Teste Unitário do App SomaNumeros": Running: go test -v ./...
+
+Step #4 - "Executando o Teste Unitário do App SomaNumeros": === RUN   TestSoma
+Step #4 - "Executando o Teste Unitário do App SomaNumeros": --- PASS: TestSoma (0.00s)
+Step #4 - "Executando o Teste Unitário do App SomaNumeros": PASS
+Step #4 - "Executando o Teste Unitário do App SomaNumeros": ok  	soma	0.002s
+Finished Step #4 - "Executando o Teste Unitário do App SomaNumeros"
+PUSH
+DONE
